@@ -1,0 +1,1 @@
+En este programa podemos consultar la lista de productos, agregar nuevos y eliminar. 
