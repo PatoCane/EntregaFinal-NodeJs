@@ -10,11 +10,21 @@
       "name": "Login",
       "request": {
         "method": "POST",
-        "header": [],
-        "url": "{{base_url}}/login",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "https://entrega-final-lac.vercel.app/api/users",
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"123456\"\n}"
+          "raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         }
       },
       "event": [
@@ -36,14 +46,14 @@
       "name": "Obtener Productos",
       "request": {
         "method": "GET",
-        "url": "{{base_url}}/products"
+        "url": "https://entrega-final-lac.vercel.app/api/products"
       }
     },
     {
       "name": "Obtener Producto por ID",
       "request": {
         "method": "GET",
-        "url": "{{base_url}}/products/{{product_id}}"
+        "url": "https://entrega-final-lac.vercel.app/api/products/{{product_id}}"
       }
     },
     {
@@ -60,10 +70,15 @@
             "value": "application/json"
           }
         ],
-        "url": "{{base_url}}/products/create",
+        "url": "https://entrega-final-lac.vercel.app/api/products/create",
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nombre\": \"Perfume Ejemplo\",\n  \"precio\": 15000,\n  \"stock\": 10\n}"
+          "raw": "{\n  \"nombre\": \"Perfume Ejemplo\",\n  \"precio\": 15000,\n  \"stock\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         }
       },
       "event": [
@@ -91,7 +106,7 @@
             "value": "Bearer {{token}}"
           }
         ],
-        "url": "{{base_url}}/products/{{product_id}}"
+        "url": "https://entrega-final-lac.vercel.app/api/products/{{product_id}}"
       }
     }
   ]
